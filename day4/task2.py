@@ -1,5 +1,6 @@
 def check_sum(spisok_chisel, summa):
-    for i in range(len(spisok_chisel)):
+    set(spisok_chisel)
+    for i in range(len(spisok_chisel) - 1):
         if spisok_chisel[i] + spisok_chisel[i + 1] == summa:
             return True
 
