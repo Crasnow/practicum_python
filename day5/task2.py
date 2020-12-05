@@ -20,3 +20,4 @@ def find_salt_text(hash):
                 result['Salt'] = line.split('|')[1]
                 return result
         print(f'По данному хэшу {hash} не найдены записи.')
+        t
