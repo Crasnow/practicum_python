@@ -11,9 +11,6 @@ def hash_text(text):
     return f
 
 
-hash_text("Privet")
-
-
 def find_salt_text(hash):
     result = {}
     with open('bd.txt', 'r') as f:
@@ -24,5 +21,3 @@ def find_salt_text(hash):
                 return result
         print(f'По данному хэшу {hash} не найдены записи.')
 
-
-find_salt_text('50b00b050577cdfceb88d6b800516112a8e9d634b79a433fbe92101d813247b3')
