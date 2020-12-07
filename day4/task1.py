@@ -5,4 +5,4 @@ def check_sum(spisok_chisel, summa):
                 return True
 
 
-print(check_sum([1, 3, 2, 12, 11], 5))
+check_sum([1, 3, 2, 12, 11], 5)
