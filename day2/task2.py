@@ -12,10 +12,11 @@ def change_word(orig_txt, old_words, new_word):
 text = input('Введите текст: ')
 max_len = int(input('Введите максимальную длину: '))
 forbidden_words = ["волшебники", "Гарри Поттер"]
+pure_text = change_word(text, forbidden_words, "***")
 analytic_txt = {'length': len(text),
                 'pure_length': len(''.join(text.split())),
                 'origin_text': text,
-                'pure_text': change_word(text, forbidden_words, "***"),
-                'pure_short_text': text[0:max_len + 1] + '...'}
+                'pure_text': pure_text,
+                'pure_short_text': pure_text[0:max_len + 1] + '...'}
 
 analytic_txt_json = json.dumps(analytic_txt, ensure_ascii=False)
