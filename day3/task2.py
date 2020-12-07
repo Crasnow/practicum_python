@@ -22,3 +22,4 @@ parasite_words_json = json.dumps(dict_words, ensure_ascii=False)
 
 print(count)
 
+
