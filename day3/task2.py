@@ -6,20 +6,16 @@ count_words = int(input())
 symbols = '[,|!|?|.]'
 
 text_as_set_wo_symbols = (re.sub(symbols, '', text).lower()).split(' ')
-text_as_set_wo_doubles = set()
-dict_words = {}
+text_as_set_wo_doubles = {}
+result = {}
 
 for i in text_as_set_wo_symbols:
-    text_as_set_wo_doubles.add(i)
+    if text_as_set_wo_doubles.setdefault(i) is None:
+        text_as_set_wo_doubles[i] = 1
+    else:
+        text_as_set_wo_doubles[i] = text_as_set_wo_doubles.setdefault(i) + 1
 
-for i in text_as_set_wo_doubles:
-    count = text_as_set_wo_symbols.count(i)
+    if text_as_set_wo_doubles.setdefault(i) >= count_words:
+        result[i] = text_as_set_wo_doubles.setdefault(i)
 
-    if count >= count_words:
-        dict_words[i] = count
-
-parasite_words_json = json.dumps(dict_words, ensure_ascii=False)
-
-print(count)
-
-
+parasite_words_json = json.dumps(result, ensure_ascii=False)
